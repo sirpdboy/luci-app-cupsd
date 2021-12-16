@@ -16,9 +16,9 @@ local button = ""
 local state_msg = ""
 
 if running then
-        state_msg = "<b><font color=\"green\">" .. translate("～正在运行～") .. "</font></b>"
+        state_msg = "<b><font color=\"green\">" .. translate("CUPS已启动") .. "</font></b>"
 else
-        state_msg = "<b><font color=\"red\">" .. translate("CUPS在睡觉觉zZZ") .. "</font></b>"
+        state_msg = "<b><font color=\"red\">" .. translate("CUPS未启动") .. "</font></b>"
 end
 
 if running  then

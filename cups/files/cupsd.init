@@ -1,0 +1,36 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006-2011 OpenWrt.org
+
+START=50
+
+get_config() {
+	config_get_bool enabled $1 enabled 0
+}
+
+start() {
+	config_load cupsd
+	config_foreach get_config cupsd
+	[ $enabled -eq 0 ] && stop && exit 0
+	mkdir -m 0755 -p /var/cache/cups
+	mkdir -m 0755 -p /var/cups
+	mkdir -m 0755 -p /var/spool/cups/tmp
+	service_start /usr/sbin/cupsd
+}
+
+stop() {
+
+	killall -q -9 cupsd
+    echo "cupsd Server has stopped."
+}
+
+restart () {
+    stop
+	sleep 2
+	start
+	
+}
+
+reload() {
+	service_reload /usr/sbin/cupsd
+	
+}
