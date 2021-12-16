@@ -18,6 +18,8 @@ set Network  ->  Printing  ->  cups
 
 
 
-other cups:
-https://github.com/Gr4ffy/lede-cups
-https://github.com/TheMMcOfficial/lede-cups
+##  other cups:
+
+# https://github.com/Gr4ffy/lede-cups
+
+# https://github.com/TheMMcOfficial/lede-cups
