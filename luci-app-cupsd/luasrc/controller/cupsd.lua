@@ -1,5 +1,5 @@
-#-- Copyright (C) 2018 dz <dingzhong110@gmail.com>
-#-- mod by 2021-2022  sirpdboy  <herboy2008@gmail.com> https://github.com/sirpdboy/luci-app-cupsd
+-- Copyright (C) 2018 dz <dingzhong110@gmail.com>
+-- mod by 2021-2022  sirpdboy  <herboy2008@gmail.com> https://github.com/sirpdboy/luci-app-cupsd
 
 module("luci.controller.cupsd", package.seeall)
 
