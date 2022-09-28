@@ -28,6 +28,7 @@ start_service() {
 	config_load cupsd
         config_foreach get_config cupsd
 	[ x$enabled == x1 ] || return 1
+	sed -i "s/Port.*/Port ${port}/g"  /etc/cups/cupsd.conf
 	[ -d /var/cache/cups ] || mkdir -m 0755 -p /var/cache/cups
 	[ -d /var/cups ] || mkdir -m 0755 -p /var/cups
 	[ -d /var/spool/cups/tmp ] || mkdir -m 0755 -p /var/spool/cups/tmp
