@@ -8,9 +8,8 @@ function index()
 		return
 	end
 
-	entry({"admin", "services", "cupsd"},alias("admin", "services", "cupsd","basic"),_("CUPS打印服务器"),60).dependent = true
-	entry({"admin", "services", "cupsd","basic"}, cbi("cupsd/basic"),_("设置"),10).leaf = true
-	entry({"admin", "services", "cupsd","advanced"}, cbi("cupsd/advanced"),_("高级"),20).leaf = true
+	entry({"admin", "services", "cupsd"},alias("admin", "services", "cupsd", "basic"), _("CUPS打印服务器"), 60).dependent = true
+	entry({"admin", "services", "cupsd", "basic"}, cbi("cupsd/basic"), _("设置"), 10).leaf = true
 	entry({"admin", "services", "cupsd_status"}, call("act_status"))
 end
 
