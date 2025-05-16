@@ -7,7 +7,7 @@ local m, s, o
 
 
 m = Map("cupsd", translate("CUPS打印服务器"))
-m.description = translate("<font color=\"green\">CUPS是苹果公司为MacOS和其他类似UNIX的操作系统开发的基于标准的开源打印系统。</font>"..translate("</br>For specific usage, see:")..translate("<a href=\'https://github.com/sirpdboy/luci-app-cupsd.git' target=\'_blank\'>GitHub @sirpdboy/luci-app-cupsd </a>") )
+m.description = "<font color=\"green\">CUPS是苹果公司为MacOS和其他类似UNIX的操作系统开发的基于标准的开源打印系统。</font><br><a href=\"/cups.pdf\" target=\"_blank\">点击此处可浏览或下载《添加打印机教程》</a>"
 m:section(SimpleSection).template  = "cupsd_status"
 
 s = m:section(TypedSection, "cupsd", translate("Global Settings"))
@@ -23,10 +23,6 @@ o.default=631
 o:depends("enabled",1)
 
 
-local e=luci.http.formvalue("cbi.apply")
-if e then
-  io.popen("/etc/init.d/cupsd start")
-end
 return m
 
 
